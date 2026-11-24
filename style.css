@@ -2588,7 +2588,7 @@ section.in .cards .card.st {
     }
 
 .about .hobby-block {
-    margin-top: 32px; /* same gap as Education / Experience */
+    margin-top: 100px; /* same gap as Education / Experience */
     margin-bottom: 8px;
 }
 
