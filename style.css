@@ -372,8 +372,18 @@ section.in h2.title .u::after {
     font-weight: 500;
 }
 
+.about-intro {
+    max-width: 520px; /* matches the old line wrapping */
+    margin-bottom: 40px;
+}
+
+.about-grid {
+    align-items: start;
+}
+
+.about h3,
 .skills h3 {
-    margin-top: 80px;
+    margin-top: 0;
 }
 
 .timeline {
