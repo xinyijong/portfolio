@@ -372,6 +372,10 @@ section.in h2.title .u::after {
     font-weight: 500;
 }
 
+.skills h3 {
+    margin-top: 20px;
+}
+
 .timeline {
     list-style: none;
     border-left: 1px solid var(--line);
