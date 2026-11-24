@@ -158,7 +158,7 @@ const tilt = document.getElementById("tilt");
 const stage = document.querySelector(".id-stage");
 
 // Give the card real thickness: a stack of layers between the two faces
-for (let z = -4; z <= 4; z++) {
+for (let z = -4; z <= 4; z += 2) { // 5 layers (fewer layers = fewer flip artifacts)
   const edge = document.createElement("div");
   edge.className = "edge" + (z === -4 ? " shadow" : "");
   edge.style.transform = `translateZ(${z}px)`;
