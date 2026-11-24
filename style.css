@@ -2587,18 +2587,19 @@ section.in .cards .card.st {
         padding-top: 18px;
     }
 
-.hobby-block {
+.about .hobby-block {
+    margin-top: 32px; /* same gap as Education / Experience */
     margin-bottom: 8px;
 }
 
-    .hobby-block h3.hobby-title {
-        margin: 40px 0 18px;
+    .about .hobby-block h3.hobby-title {
+        margin: 0 0 16px;
     }
 
-    .hobby-block ul {
-        grid-template-columns: 1fr;
-        max-width: 360px;
-    }
+.hobby-block ul {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+}
 
 body:not(.owner) .upload {
     display: none !important;
@@ -2654,10 +2655,6 @@ body:not(.owner) .upload {
 .about > h3:first-child,
 .skills > h3:first-child {
     margin-top: 0;
-}
-
-.skills hobby-title{
-        margin-top: 20px;
 }
 
 @media (max-width: 1000px) {
