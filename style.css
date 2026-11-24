@@ -2593,3 +2593,28 @@ body:not(.owner) .upload {
     box-shadow: none;
 }
 /* a big shadow inside the 3D card flickers while it turns */
+
+/* ID card: stop browser highlight / drag ghost (white flashes) */
+.flip, .flip * {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+    .flip img {
+        pointer-events: none;
+        -webkit-user-drag: none;
+    }
+
+    .flip:focus {
+        outline: none;
+    }
+
+    .flip:focus-visible {
+        outline: 2px solid var(--gold);
+    }
+
+    .flip .face {
+        -webkit-transform-style: flat;
+    }
