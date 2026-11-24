@@ -2636,3 +2636,26 @@ body:not(.owner) .upload {
     .flip .face {
         -webkit-transform-style: flat;
     }
+
+/* ================= V12: intro on top, Education + Skills on the same line ================= */
+.about-intro {
+    max-width: 520px;
+    margin-bottom: 48px;
+    color: var(--text);
+}
+
+.about-grid {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+}
+
+.about > h3:first-child,
+.skills > h3:first-child {
+    margin-top: 0;
+}
+
+@media (max-width: 1000px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
