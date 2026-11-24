@@ -166,6 +166,7 @@ for (let z = -4; z <= 4; z++) {
 }
 
 let kick = () => {}; // set by the lanyard physics below
+let busy = false;     // true while the card is flipping, so cursor tilt pauses
 
 // Drag to spin, click to flip
 let rot = 0, startX = 0, startRot = 0, down = false, moved = false;
@@ -188,8 +189,10 @@ const release = () => {
   if (!down) return;
   down = false;
   flip.classList.remove("dragging");
+  busy = true; setTimeout(() => busy = false, 950);
+  ["--ry", "--rx"].forEach(v => tilt.style.setProperty(v, "0deg"));
   setRot(moved ? snap() : snap() + 180);
-  kick((Math.random() < .5 ? -1 : 1) * (moved ? 0.9 : 0.6)); // the lanyard sways when the card is handled
+  kick((Math.random() < .5 ? -1 : 1) * (moved ? 0.4 : 0.25)); // the lanyard sways when the card is handled
 };
 flip.addEventListener("pointerup", release);
 flip.addEventListener("pointercancel", release);
@@ -200,6 +203,7 @@ flip.addEventListener("keydown", e => {
 // Card tilts with the cursor
 if (fineHover && !reduced) {
   stage.addEventListener("pointermove", e => {
+    if (busy || down) return;
     const r = stage.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width;
     const y = (e.clientY - r.top) / r.height;
