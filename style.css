@@ -372,7 +372,7 @@ section.in h2.title .u::after {
     font-weight: 500;
 }
 
-<<<<<<< HEAD
+
 .about-intro {
     max-width: 520px; /* matches the old line wrapping */
     margin-bottom: 40px;
@@ -391,8 +391,6 @@ section.in h2.title .u::after {
     margin-top: 0;
 }
 
-=======
->>>>>>> parent of a6e0676 (about me)
 .timeline {
     list-style: none;
     border-left: 1px solid var(--line);
