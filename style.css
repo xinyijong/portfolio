@@ -386,6 +386,10 @@ section.in h2.title .u::after {
     margin-top: 0;
 }
 
+.about > h3:first-child {
+    margin-top: 0;
+}
+
 .timeline {
     list-style: none;
     border-left: 1px solid var(--line);
