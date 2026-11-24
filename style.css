@@ -393,10 +393,11 @@ section.in h2.title .u::after {
 
 .timeline {
     list-style: none;
-    border-left: 1px solid var(--line);
+    border-left: 1px solid rgba(200, 157, 88, .45); /* gold line, clearly visible on the dark bg */
 }
 
     .timeline li {
+        list-style: none;
         padding: 0 0 22px 22px;
         position: relative;
     }
