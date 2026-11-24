@@ -2588,7 +2588,7 @@ section.in .cards .card.st {
     }
 
 .about .hobby-block {
-    margin-top: 100px; /* same gap as Education / Experience */
+    margin-top: 32px; /* same gap as Education / Experience */
     margin-bottom: 8px;
 }
 
@@ -2661,4 +2661,32 @@ body:not(.owner) .upload {
     .about-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ================= Skills as text pills ================= */
+.skills ul.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+    .skills ul.skill-tags li {
+        display: block;
+        padding: 7px 14px;
+        font-size: .82rem;
+        line-height: 1.2;
+        color: var(--text);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255,255,255,.015);
+    }
+
+        .skills ul.skill-tags li:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+.skill-group + .skill-group {
+    margin-top: 22px;
 }
