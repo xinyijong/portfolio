@@ -159,7 +159,10 @@
         lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true");
         if (list[idx]) goTo(cells.indexOf(list[idx])); // carousel follows the photo you were viewing
         };
-        const activate = tile => tile.classList.contains("has-img") ? open(tile) : tile.querySelector("input").click();
+        const activate = tile => {
+    if (tile.classList.contains("has-img")) open(tile);
+    else if (document.body.classList.contains("owner")) tile.querySelector("input").click();
+};
         const onCell = cell => {
         const i = cells.indexOf(cell);
         if (i === mod(cur, n)) activate(cell); else goTo(i);

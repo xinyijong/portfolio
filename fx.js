@@ -1,3 +1,5 @@
+if (location.search.includes("edit")) document.body.classList.add("owner");
+
 /* Shared effects: used on every page */
 const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
 const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
