@@ -223,11 +223,18 @@ if (fineHover && !reduced) {
   const label = box.querySelector(".upload");
 
   img.addEventListener("load", () => box.classList.add("has-img"));
-  img.addEventListener("error", () => box.classList.remove("has-img"));
 
   let saved = null;
   try { saved = localStorage.getItem("id-" + side); } catch (e) {}
-  img.src = saved || `assets/id-${side}.jpg`;
+
+  // no upload yet: look for assets/id-front or id-back with a few common extensions
+  const EXTS = ["jpg", "jpeg", "png", "webp", "JPG", "JPEG", "PNG"];
+  let tries = 0, custom = !!saved;
+  img.addEventListener("error", () => {
+    box.classList.remove("has-img");
+    if (!custom && ++tries < EXTS.length) img.src = `assets/id-${side}.${EXTS[tries]}`;
+  });
+  img.src = saved || `assets/id-${side}.${EXTS[0]}`;
 
   label.addEventListener("click", e => e.stopPropagation());
   input.addEventListener("change", () => {
@@ -235,6 +242,7 @@ if (fineHover && !reduced) {
     if (!file) return;
     const reader = new FileReader();
     reader.onload = () => {
+      custom = true;
       img.src = reader.result;
       try { localStorage.setItem("id-" + side, reader.result); } catch (e) {}
     };
