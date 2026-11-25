@@ -2267,7 +2267,6 @@ section.in .cards .card.st {
     --h: 440px;
     position: relative;
     height: calc(var(--h) + 90px);
-    perspective: 2200px;
     cursor: grab;
     user-select: none;
     -webkit-user-select: none;
@@ -2280,13 +2279,8 @@ section.in .cards .card.st {
 
 .ring {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    width: var(--w);
-    height: var(--h);
-    margin: calc(var(--h) / -2) 0 0 calc(var(--w) / -2);
-    transform-style: preserve-3d;
-    transition: transform .8s cubic-bezier(.2,.8,.2,1);
+    inset: 0;
+    perspective: 1800px; /* depth for the side cards */
 }
 
     .ring.dragging, .ring.dragging .cell {
@@ -2295,18 +2289,23 @@ section.in .cards .card.st {
 
 .cell {
     position: absolute;
-    inset: 0;
+    left: 50%;
+    top: 50%;
+    width: var(--w);
+    height: var(--h);
+    margin: calc(var(--h) / -2) 0 0 calc(var(--w) / -2);
+    will-change: transform;
     border-radius: var(--radius);
     overflow: hidden;
     background: #1a1a1a;
     border: 1px solid var(--line);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transition: opacity .5s, border-color .3s, box-shadow .4s;
+    transition: transform .6s cubic-bezier(.2,.8,.2,1), opacity .5s, border-color .3s, box-shadow .4s;
 }
 
     .cell.front {
-        border-color: var(--gold);
+        border-color: rgba(200,157,88,.55);
         box-shadow: 0 30px 60px rgba(0,0,0,.55);
     }
 
@@ -2361,8 +2360,8 @@ section.in .cards .card.st {
 }
 
 .car-btn {
-    width: 46px;
-    height: 46px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     border: 1px solid var(--line);
     background: var(--surface);

@@ -95,44 +95,46 @@
         });
         });
 
-        /* ---------- 3D ring ---------- */
-        let radius = 0, cur = 0, rot = 0, dragging = false, sx = 0, srot = 0, moved = 0;
+        /* ---------- Cover-flow carousel: centre photo large, neighbours angled behind it ---------- */
+        let W = 330, cur = 0, pos = 0, dragging = false, sx = 0, spos = 0, moved = 0;
 
-        function layout() {
-        const w = cells[0].offsetWidth;
-        radius = Math.round((w / 2 + 14) / Math.tan(Math.PI / n)); // 14px gap between photos
-        cells.forEach((c, i) => c.style.transform = `rotateY(${i * step}deg) translateZ(${radius}px)`);
-        render();
-        }
+        function layout() { W = cells[0].offsetWidth; render(); }
         function render() {
-        ring.style.transform = `translateZ(${-radius}px) rotateY(${rot}deg)`;
         cells.forEach((c, i) => {
-        const d = Math.abs(mod(i * step + rot + 180, 360) - 180); // degrees away from the front
-        c.style.opacity = d > 95 ? 0 : Math.max(.3, 1 - d / 120);
-        c.classList.toggle("front", d < step / 2);
+        const d = mod(i - pos + n / 2, n) - n / 2;      // signed distance from the centre photo
+        const a = Math.abs(d), s = Math.sign(d);
+        const x = s * (Math.min(a, 1) * W * 0.74 + Math.max(0, Math.min(a, 3) - 1) * W * 0.36);
+        const ry = -s * Math.min(a, 1) * 38;            // angle the side photos towards the centre
+        const sc = 1 - Math.min(a, 2) * 0.11;           // and make them a bit smaller
+        const z = -Math.min(a, 2) * 90;
+        c.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${ry}deg) scale(${sc})`;
+        c.style.opacity = a <= 1 ? 1 - a * 0.1 : a <= 2 ? 0.9 - (a - 1) * 0.35 : Math.max(0, 0.55 - (a - 2) * 0.9);
+        c.style.zIndex = Math.round(100 - a * 10);
+        c.style.pointerEvents = a > 2.6 ? "none" : "";
+        c.classList.toggle("front", a < 0.5);
         });
-        countEl.textContent = `${mod(Math.round(-rot / step), n) + 1} / ${n}`;
+        countEl.textContent = `${mod(Math.round(pos), n) + 1} / ${n}`;
         }
-        const go = d => { cur += d; rot = -cur * step; render(); };
+        const go = d => { cur += d; pos = cur; render(); };
         const goTo = i => go(mod(i - mod(cur, n) + n / 2, n) - n / 2); // shortest way round
 
         stage.addEventListener("pointerdown", e => {
         if (e.target.closest(".upload")) return;
-        dragging = true; sx = e.clientX; srot = rot; moved = 0;
+        dragging = true; sx = e.clientX; spos = pos; moved = 0;
         ring.classList.add("dragging"); stage.classList.add("dragging");
         });
         addEventListener("pointermove", e => {
         if (!dragging) return;
         const dx = e.clientX - sx;
         moved = Math.max(moved, Math.abs(dx));
-        rot = srot + dx * 0.3; // drag sensitivity
+        pos = spos - dx / (W * 0.55);                   // drag sensitivity
         render();
         });
         const endDrag = (e, canClick) => {
         if (!dragging) return;
         dragging = false;
         ring.classList.remove("dragging"); stage.classList.remove("dragging");
-        if (moved > 6) { cur = Math.round(-rot / step); rot = -cur * step; render(); }
+        if (moved > 6) { cur = Math.round(pos); pos = cur; render(); }
         else if (canClick) { const c = e.target.closest(".cell"); if (c) onCell(c); }
         };
         addEventListener("pointerup", e => endDrag(e, true));
@@ -160,9 +162,9 @@
         if (list[idx]) goTo(cells.indexOf(list[idx])); // carousel follows the photo you were viewing
         };
         const activate = tile => {
-    if (tile.classList.contains("has-img")) open(tile);
-    else if (document.body.classList.contains("owner")) tile.querySelector("input").click();
-};
+        if (tile.classList.contains("has-img")) open(tile);
+        else if (document.body.classList.contains("owner")) tile.querySelector("input").click();
+        };
         const onCell = cell => {
         const i = cells.indexOf(cell);
         if (i === mod(cur, n)) activate(cell); else goTo(i);
