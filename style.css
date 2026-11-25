@@ -1884,7 +1884,6 @@ section.in .cards .card.st {
     .lightbox .x {
         top: 22px;
         right: 22px;
-        font-size: .85rem;
     }
 
     .lightbox .prev {
@@ -2709,3 +2708,15 @@ a.back svg {
     vertical-align: -2px;
     margin-right: 6px;
 }
+
+/* bigger X in the photo viewer (the circle stays the same size) */
+.lightbox .x {
+    display: grid;
+    place-items: center;
+    padding: 0;
+}
+
+    .lightbox .x svg {
+        width: 30px;
+        height: 30px;
+    }
