@@ -1884,6 +1884,7 @@ section.in .cards .card.st {
     .lightbox .x {
         top: 22px;
         right: 22px;
+        font-size: .85rem;
     }
 
     .lightbox .prev {
