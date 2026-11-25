@@ -1,10 +1,10 @@
 /* ---------- Design tokens (edit colours here) ---------- */
 :root {
-    --bg: #121014; /* slightly lighter than pure black */
-    --surface: #141414;
-    --line: #242424;
+    --bg: #17141a; /* slightly lighter than pure black */
+    --surface: #1f1b24;
+    --line: #332e3a;
     --text: #cccccc;
-    --muted: #8c8c8c;
+    --muted: #9a95a3;
     --red: #960018; /* buttons, hover */
     --pink: #d27cbc; /* decoration */
     --gold: #C89D58; /* decoration */
@@ -114,7 +114,7 @@ section.in h2.title .u::after {
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 10;
-    background: rgba(11,11,11,.8);
+    background: rgba(23,20,26,.8);
     backdrop-filter: blur(10px);
 }
 
@@ -323,7 +323,7 @@ section.in h2.title .u::after {
 .photo {
     aspect-ratio: 4/5;
     border-radius: var(--radius);
-    background: linear-gradient(135deg, #1b1b1b, #101010);
+    background: linear-gradient(135deg, #29242f, #1c1820);
     border: 1px solid var(--line);
     position: relative;
     overflow: hidden;
@@ -449,7 +449,7 @@ section.in h2.title .u::after {
 
     .card .cover {
         aspect-ratio: 16/10;
-        background: #1a1a1a;
+        background: #26222c;
         position: relative;
         overflow: hidden;
     }
@@ -571,7 +571,7 @@ footer {
     padding-bottom: 40px;
 }
 
-.back {
+a.back {
     color: var(--muted);
     font-size: .9rem;
     display: inline-block;
@@ -579,7 +579,7 @@ footer {
     transition: color .2s;
 }
 
-    .back:hover {
+    a.back:hover {
         color: var(--red);
     }
 
@@ -599,7 +599,7 @@ footer {
 .detail-cover {
     aspect-ratio: 16/8;
     border-radius: var(--radius);
-    background: #1a1a1a;
+    background: #26222c;
     overflow: hidden;
     border: 1px solid var(--line);
 }
@@ -877,7 +877,7 @@ footer {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     background: var(--surface);
-    border: 1px solid #2c2c2c;
+    border: 1px solid #3a3441;
     box-shadow: 0 30px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(210,124,188,.08);
     padding: 22px;
     overflow: hidden;
@@ -893,7 +893,7 @@ footer {
     margin: 0 auto 14px;
     border-radius: 99px;
     background: var(--bg);
-    border: 1px solid #2c2c2c;
+    border: 1px solid #3a3441;
 }
 
 .id-photo {
@@ -901,8 +901,8 @@ footer {
     height: 240px;
     border-radius: 14px;
     overflow: hidden;
-    background: linear-gradient(135deg, #1d1d1d, #111);
-    border: 1px solid #2a2a2a;
+    background: linear-gradient(135deg, #2b2631, #1d1921);
+    border: 1px solid #38323f;
 }
 
     .id-photo.full {
@@ -943,9 +943,9 @@ footer {
     font-size: .7rem;
     padding: 5px 12px;
     border-radius: 99px;
-    background: rgba(11,11,11,.8);
+    background: rgba(23,20,26,.8);
     color: var(--text);
-    border: 1px solid #333;
+    border: 1px solid #3d3745;
     opacity: 0;
     transition: opacity .25s, background .25s;
     cursor: pointer;
@@ -1569,8 +1569,8 @@ section {
     }
 
 .face {
-    background: linear-gradient(160deg, #1d1d1d, #0f0f0f);
-    border: 1px solid #333;
+    background: linear-gradient(160deg, #2b2631, #1b171e);
+    border: 1px solid #3d3745;
     box-shadow: inset 0 0 0 1px rgba(255,255,255,.04), inset 0 1px 0 rgba(255,255,255,.14);
     transform: translateZ(5px);
 }
@@ -1583,8 +1583,8 @@ section {
     position: absolute;
     inset: 0;
     border-radius: 20px;
-    background: #2a2a2a;
-    border: 1px solid #3a3a3a;
+    background: #38323f;
+    border: 1px solid #453e4d;
 }
 
     .edge.shadow {
@@ -1801,7 +1801,7 @@ section.in .cards .card.st {
     position: relative;
     overflow: hidden;
     cursor: zoom-in;
-    background: #1a1a1a;
+    background: #26222c;
     border: 1px solid var(--line);
     border-radius: var(--radius);
     transition: border-color .3s, transform .4s cubic-bezier(.2,.7,.2,1);
@@ -1847,7 +1847,7 @@ section.in .cards .card.st {
     z-index: 50;
     display: none;
     place-items: center;
-    background: rgba(11,11,11,.94);
+    background: rgba(23,20,26,.94);
     backdrop-filter: blur(6px);
 }
 
@@ -2001,7 +2001,7 @@ section.in .cards .card.st {
     display: grid;
     place-items: center;
     padding: 24px;
-    background: rgba(11,11,11,.82);
+    background: rgba(23,20,26,.82);
     backdrop-filter: blur(8px);
     opacity: 0;
     visibility: hidden;
@@ -2019,8 +2019,8 @@ section.in .cards .card.st {
     width: min(760px, 100%);
     max-height: min(92vh, 880px);
     overflow-y: auto;
-    background: linear-gradient(160deg, #1b1b1b, #121212);
-    border: 1px solid #2c2c2c;
+    background: linear-gradient(160deg, #29242f, #1e1a22);
+    border: 1px solid #3a3441;
     border-radius: 20px;
     box-shadow: 0 40px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(210,124,188,.08);
     transform: translateY(24px) scale(.96);
@@ -2033,7 +2033,7 @@ section.in .cards .card.st {
 
 .m-cover {
     aspect-ratio: 16/8;
-    background: #1a1a1a;
+    background: #26222c;
     overflow: hidden;
 }
 
@@ -2297,7 +2297,7 @@ section.in .cards .card.st {
     will-change: transform;
     border-radius: var(--radius);
     overflow: hidden;
-    background: #1a1a1a;
+    background: #26222c;
     border: 1px solid var(--line);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -2688,4 +2688,23 @@ body:not(.owner) .upload {
 
 .skill-group + .skill-group {
     margin-top: 22px;
+}
+
+/* ================= Chevron arrows ( < and > ) ================= */
+.car-btn, .lightbox .prev, .lightbox .next {
+    display: grid;
+    place-items: center;
+    padding: 0;
+}
+
+    .car-btn svg, .lightbox .prev svg, .lightbox .next svg {
+        width: 18px;
+        height: 18px;
+    }
+
+a.back svg {
+    width: 14px;
+    height: 14px;
+    vertical-align: -2px;
+    margin-right: 6px;
 }
