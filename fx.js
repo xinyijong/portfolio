@@ -65,7 +65,7 @@ document.querySelectorAll(".btn").forEach(btn => {
 });
 
 /* Sections: stagger their content in when scrolled into view */
-const STAGGER = "h2.title, .filters, .about > p, .about > h3, .about > ul, .about > .btn, .skills, .cards .card, .contact p, .contact .mail, .contact .socials";
+const STAGGER = "h2.title, .about-intro, .filters, .about > p, .about > h3, .about > ul, .about > .btn, .skills, .cards .card, .contact p, .contact .mail, .contact .socials";
 const secIO = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
