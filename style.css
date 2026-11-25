@@ -374,7 +374,7 @@ section.in h2.title .u::after {
 
 
 .about-intro {
-    max-width: 520px; /* matches the old line wrapping */
+    max-width: none; /* full width of the section */
     margin-bottom: 40px;
 }
 
@@ -2641,7 +2641,7 @@ body:not(.owner) .upload {
 
 /* ================= V12: intro on top, Education + Skills on the same line ================= */
 .about-intro {
-    max-width: 520px;
+    max-width: none; /* spans the whole section, above Education and Skills */
     margin-bottom: 48px;
     color: var(--text);
 }
