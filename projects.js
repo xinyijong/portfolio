@@ -46,6 +46,26 @@ const PROJECTS = [
     demo: "https://public.tableau.com/app/profile/cindy.jong5690/viz/TitanicSurvivalDashboard_17810997167810/laptop",
     demoLabel: "View Dashboard"
   },
+    {
+    id: "vegetables-detection",
+    category: ["AI"],
+    title: "Vegetable Detection Model",
+    summary: "A vegetable detection model that identifies eight vegetable classes using computer vision.",
+    cover: "assets/vegetables-cover.jpg",
+    tags: ["AI", "Object Detection"],
+    year: "2026",
+    period: "Dec 2025",
+    role: "Developer",
+    tools: "Roboflow, YOLOv8-compatible, MS COCO checkpoint",
+    details: [
+      { title: "Overview", points: ["An object detection model that recognises 8 vegetables, trained on a custom dataset of 800 annotated images."] },
+      { title: "Features", points: ["Detects and labels vegetables in images with bounding boxes and confidence scores", "Training used augmentation which expanded the training set from 560 to 1,680 images"] },
+      { title: "Outcome", points: ["99.0% mAP@50 on the validation set and 98.0% on an 80-image held-out test set", "7 of 8 classes reached 100% on the test set; garlic was weakest at 91%" ] }
+    ],
+    github: "",
+    demo: "https://app.roboflow.com/workflows/embed/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3b3JrZmxvd0lkIjoiSWVMNWNjNzBNcDFndW5kVlVua3oiLCJ3b3Jrc3BhY2VJZCI6IjdkcU5OTnZKTGJNTUptMmxNUVNMWVBva2d2NDMiLCJ1c2VySWQiOiIyalY2ZUprUDZxUm9Xc1p0Yk5sS2N4YkRKQmwxIiwiaWF0IjoxNzk1NTE5NzYwfQ.Wt_IBOyDvsYU5tr3-lDe54KMMBQqp2AGB4dq2vALD8o",
+    demoLabel: "Try Model"
+  },
   {
     id: "unimasbuy",
     category: ["UI Design"],
@@ -84,25 +104,5 @@ const PROJECTS = [
     github: "",
     demo: "https://www.figma.com/proto/PVkuGNgYYLclqYrFKBMlzj/EcoApp?node-id=0-1&t=PTzZfZlQyDHKQjyb-1",
     demoLabel: "View Prototype"
-  },
-  {
-    id: "vegetables-detection",
-    category: ["AI"],
-    title: "Vegetable Detection Model",
-    summary: "A vegetable detection model that identifies eight vegetable classes using computer vision.",
-    cover: "assets/vegetables-cover.jpg",
-    tags: ["AI", "Object Detection"],
-    year: "2026",
-    period: "Dec 2025",
-    role: "Developer",
-    tools: "Roboflow, YOLOv8-compatible, MS COCO checkpoint",
-    details: [
-      { title: "Overview", points: ["An object detection model that recognises 8 vegetables, trained on a custom dataset of 800 annotated images."] },
-      { title: "Features", points: ["Detects and labels vegetables in images with bounding boxes and confidence scores", "Training used augmentation which expanded the training set from 560 to 1,680 images"] },
-      { title: "Outcome", points: ["99.0% mAP@50 on the validation set and 98.0% on an 80-image held-out test set", "7 of 8 classes reached 100% on the test set; garlic was weakest at 91%" ] }
-    ],
-    github: "",
-    demo: "https://app.roboflow.com/workflows/embed/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3b3JrZmxvd0lkIjoiSWVMNWNjNzBNcDFndW5kVlVua3oiLCJ3b3Jrc3BhY2VJZCI6IjdkcU5OTnZKTGJNTUptMmxNUVNMWVBva2d2NDMiLCJ1c2VySWQiOiIyalY2ZUprUDZxUm9Xc1p0Yk5sS2N4YkRKQmwxIiwiaWF0IjoxNzk1NTE5NzYwfQ.Wt_IBOyDvsYU5tr3-lDe54KMMBQqp2AGB4dq2vALD8o",
-    demoLabel: "Try Model"
   }
 ];
