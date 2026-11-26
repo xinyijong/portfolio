@@ -50,7 +50,7 @@ const PROJECTS = [
     id: "vegetables-detection",
     category: ["AI"],
     title: "Vegetable Detection Model",
-    summary: "A vegetable detection model that identifies eight vegetable classes using computer vision.",
+    summary: "A vegetable detection model that identifies eight vegetable classes.",
     cover: "assets/vegetables-cover.jpg",
     tags: ["AI", "Object Detection"],
     year: "2026",
