@@ -1,7 +1,7 @@
 // Edit your projects here. The home page cards and the pop-up both read from this list.
 // Put images in an "assets" folder. Missing images simply show a dark placeholder.
 // "category" decides which filter chips show the project: "Data Visualisation", "AI", "Software Development", "UI Design".
-// "period" is the timeline shown at the bottom of the card, e.g. "Feb – Aug 2026".
+// "period" is the timeline shown at the bottom of the card, e.g. "Feb \u2013 Aug 2026".
 // "details" is the pop-up description. Keep it short: an Overview (1-2 sentences), optional Features (2-3 bullets) and Outcome (1-3 bullets, ideally with a number).
 // "apk" (Android download link) is optional too.
 // "github" and "demo" are optional: leave one as "" and its button is hidden (both empty = no link row).
@@ -14,7 +14,7 @@ const PROJECTS = [
     cover: "assets/arasa-cover.jpg",
     tags: ["Software Development", "AR"],
     year: "2026",
-    period: "Feb – Aug 2026",
+    period: "Oct 2025 \u2013 Jun 2026",
     role: "Designer & Developer",
     tools: "Unity, AR Foundation, Firebase, React, Figma",
     details: [
@@ -32,9 +32,9 @@ const PROJECTS = [
     title: "Titanic Survival Dashboard",
     summary: "An interactive dashboard comparing Titanic survival rates by passenger profile.",
     cover: "assets/titanic-cover.jpg",
-    tags: ["Data Visualisation"],
+    tags: ["Data Visualisation", "Tableau"],
     year: "2026",
-    period: "Feb – Aug 2026",
+    period: "May \u2013 Jun 2026",
     role: "Data Visualisation",
     tools: "Tableau Public",
     details: [
@@ -54,7 +54,7 @@ const PROJECTS = [
     cover: "assets/unimasbuy-cover.jpg",
     tags: ["UI Design", "E-commerce"],
     year: "2024",
-    period: "Feb – Aug 2026",
+    period: "May \u2013 Jun 2024",
     role: "UI Designer",
     tools: "Figma, Canva",
     details: [
@@ -74,7 +74,7 @@ const PROJECTS = [
     cover: "assets/ecoapp-cover.jpg",
     tags: ["UI Design", "Mobile"],
     year: "2024",
-    period: "Feb – Aug 2026",
+    period: "Feb 2024",
     role: "UI Designer",
     tools: "Figma, Canva",
     details: [
@@ -93,7 +93,7 @@ const PROJECTS = [
     cover: "assets/vegetables-cover.jpg",
     tags: ["AI", "Object Detection"],
     year: "2026",
-    period: "Feb – Aug 2026",
+    period: "Dec 2025",
     role: "Developer",
     tools: "Roboflow, YOLOv8-compatible, MS COCO checkpoint",
     details: [
