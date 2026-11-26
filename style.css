@@ -2720,3 +2720,36 @@ a.back svg {
         width: 12px;
         height: 12px;
     }
+
+/* Project timeline at the bottom of each card */
+.card-in {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+    .card .body .tags {
+        margin-bottom: 16px;
+    }
+
+.card .period {
+    margin-top: auto;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .8rem;
+    color: var(--muted);
+}
+
+    .card .period svg {
+        width: 15px;
+        height: 15px;
+        color: var(--gold);
+        flex: none;
+    }

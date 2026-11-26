@@ -16,6 +16,7 @@ cards.innerHTML = PROJECTS.map((p, i) => `
         <div class="tags">
           ${p.tags.map((t, j) => `<span class="tag ${j % 2 ? "alt" : ""}">${t}</span>`).join("")}
         </div>
+        ${p.period ? `<div class="period"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>${p.period}</div>` : ""}
       </div>
     </div>
   </a>`).join("");
