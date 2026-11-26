@@ -2750,7 +2750,7 @@ a.back svg {
 /* Inline gold link (e.g. "photography" in the About intro) */
 .gold-link {
     color: var(--gold);
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 2px;
