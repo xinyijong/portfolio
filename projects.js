@@ -18,7 +18,7 @@ const PROJECTS = [
     details: [
       { title: "Overview", points: ["An Android AR escape room that teaches Iban food culture through interactive objects and quizzes."] },
       { title: "Features", points: ["Countdown timer, leaderboard and achievements", "Admin dashboard for managing users, questions, and rooms, and viewing player performance"] },
-      { title: "Outcome", points: ["Evaluated usability with 30 university students, achieving a System Usability Scale (SUS) score of 76.8/100", "90% of participants reported that ARasa improved their understanding of Iban food culture"] }
+      { title: "Outcome", points: ["Evaluated usability with 30 university students, achieving a System Usability Scale (SUS) score of 76.8/100", "90% of players reported that ARasa improved their understanding of Iban food culture"] }
     ],
     github: "",
     demo: "",
