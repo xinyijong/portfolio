@@ -2780,7 +2780,7 @@ a.back svg {
     }
 
     .back-link:hover, .back-link:focus-visible {
-        color: var(--gold);
+        color: var(--red);
     }
 
         .back-link:hover svg, .back-link:focus-visible svg {
