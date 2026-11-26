@@ -2758,7 +2758,7 @@ a.back svg {
 }
 
     .gold-link:hover, .gold-link:focus-visible {
-        color: var(--pink);
+        color: var(--red);
     }
 
 /* "< Back to about" link above the gallery title */
